@@ -1,8 +1,8 @@
-require('../backend/config/db');
+require('./backend/config/db');
 var express = require('express');
 var bodyparser = require('body-parser');
 
-var apiroutes = require ('../backend/routes/userRoutes');
+var apiroutes = require ('./backend/routes/userRoutes');
 
 var cors = require('cors');
 
