@@ -1,0 +1,44 @@
+
+<div id="backgroundimage">
+  <mat-card>
+    <h1 fontbold>
+    <a class="btn btn-secondary" 
+    routerLink="/register">
+    <i class="fa fa-plus"></i> 
+  
+    Create New User</a>
+    <br><br>
+    User List</h1>
+   <table class="table table-stripped">
+     <thead>
+      <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Contact</th>
+        <th>Edit </th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+            
+   <tr> 
+     <!-- <td>{{UserDetails.data._id}}</td> -->
+     <td></td>
+     <td>{{UserDetails.data.name}}</td>
+     <td>{{UserDetails.data.email}}</td>
+     <td>{{UserDetails.data.contact}}</td>
+     <td>
+     
+     <a routerLink="/update/"><i class="fa fa-pencil fa-lg" aria-hidden="true"></i></a>
+    </td>
+    <td>
+     <a routerLink="/delete/"><i class="fa fa-trash fa-lg" aria-hidden="true"></i></a>
+    </td>
+    </tr>
+  </tbody>
+    </table>
+  
+
+
+

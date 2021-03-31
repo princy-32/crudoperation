@@ -1,0 +1,86 @@
+
+<body style="background-color:black;">
+	
+    	<div class="limiter">
+			<div id="backgroundimage">
+			
+		<div class="container-login100">
+			<div class="wrap-login100"> 
+				<form class="login100-form validate-form"  #loginform="ngForm" (ngSubmit)="login(loginform)" >
+					<span class="login100-form-title p-b-43">
+					SignIn
+					</span>
+					
+					
+					<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+						<input class="input100" type="text" name="email"
+						placeholder="Email"
+						#email="ngModel"
+                        [(ngModel)]="userservice.existingUser.email">
+						<span class="focus-input100"></span>
+						<span class="label-input100"></span>
+					</div>
+					
+					
+					<div class="wrap-input100 validate-input" data-validate="Password is required">
+						<input class="input100" type="password" name="password"
+						placeholder="Password"
+						#password="ngModel"
+						[(ngModel)]="userservice.existingUser.password">
+						<span class="focus-input100"></span>
+						<span class="label-input100"></span>
+					</div>
+
+					<div class="flex-sb-m w-full p-t-3 p-b-32">
+						<div class="contact100-form-checkbox">
+							<input class="input-checkbox100" id="ckb1" type="checkbox" name="remember-me">
+							<label class="label-checkbox100" for="ckb1">
+								Remember me
+							</label>
+						</div>
+
+						<div>
+							<a class="txt1" routerLink="/register" >
+								Forgot Password?
+							</a>
+						</div>
+					</div>
+			
+
+					<div class="container-login100-form-btn">
+						<button type="submit" class="login100-form-btn">
+							Login
+						</button>
+					</div>
+					<br>
+					<div class="form-group form-check">
+						Don't have an account?
+						  <a [routerLink]="['/register']">SignUp</a>
+					  </div>
+					<br>
+					<div class="login100-form-social flex-c-m">
+						<a href="#" class="login100-form-social-item flex-c-m bg1 m-r-5">
+							<i class="fa fa-facebook-f" aria-hidden="true"></i>
+						</a>
+
+						<a href="#" class="login100-form-social-item flex-c-m bg2 m-r-5">
+							<i class="fa fa-twitter" aria-hidden="true"></i>
+						</a>
+					</div>
+				</form>
+				<div *ngIf="showmessage">
+					Login Successfully
+				  </div>
+			
+				  <div *ngIf="errorMessage">
+					{{error}}
+				  </div>
+                <div class="login100-more" style="background-image: url('assets/images/download1.jpg');"> 
+				</div>
+			</div>
+			</div>
+		</div>
+
+	</div>
+
+</body>
