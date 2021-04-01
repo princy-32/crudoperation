@@ -42,9 +42,10 @@ export class LoginComponent implements OnInit {
  this.showmessage=true;
     },
     (err)=>{
-      this.errorMessage=true;
-      this.error=err;
-      console.log(err);
+
+      // this.errorMessage=true;
+      // this.error=err;
+      console.log(JSON.stringify(err));
     })
   }
 
