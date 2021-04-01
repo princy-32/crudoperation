@@ -13,7 +13,12 @@ var app =express();
 app.use(express.json()); 
 app.use(express.urlencoded({extended:true}));
 app.use(cors());
+
+
+
 const PORT =process.env.PORT | 3000;
+
+
 app.use('/',apiroutes);
 app.use(express.static(__dirname+'/dist/crudapp'));
 
