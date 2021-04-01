@@ -4,19 +4,18 @@ var bodyparser = require('body-parser');
 
 var apiroutes = require ('./backend/routes/userRoutes');
 
-app.use(express.static(__dirname+'/dist/crudapp') );
+
 
 var cors = require('cors');
 
 var app =express();
 
 app.use(express.json()); 
-app.use(express.urlencoded({extended:false}));
+app.use(express.urlencoded({extended:true}));
 app.use(cors());
-
+const port =process.env.PORT | 3000;
 app.use('/',apiroutes);
-
-
+app.use(express.static(__dirname+'/dist/crudapp'));
 
 app.use((req , res, next )=>{
     res.setHeader('Access-Control-Allow-Origin' , '*' ),
@@ -26,9 +25,10 @@ app.use((req , res, next )=>{
 })
 
 
+app.get('/*',function(req,res){
+    res.sendFile(__dirname+'/dist/crudapp/index.html')
+})
 
-
-const port =process.env.PORT | 3000;
 
 app.listen(port , ()=>{
     console.log('Server is running at http://localhost:'+port);
