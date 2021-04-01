@@ -24,7 +24,7 @@ app.use((req , res, next )=>{
 })
 
 
-app.use(express.static(__dirname+'/dist/project/index.html') );
+app.use(express.static(__dirname+'/dist/crudapp/index.html') );
 
 const port =process.env.PORT | 3000;
 
