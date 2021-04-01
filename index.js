@@ -13,7 +13,7 @@ var app =express();
 app.use(express.json()); 
 app.use(express.urlencoded({extended:true}));
 app.use(cors());
-const port =process.env.PORT | 3000;
+const PORT =process.env.PORT | 3000;
 app.use('/',apiroutes);
 app.use(express.static(__dirname+'/dist/crudapp'));
 
@@ -30,6 +30,6 @@ app.get('/*',function(req,res){
 })
 
 
-app.listen(port , ()=>{
-    console.log('Server is running at http://localhost:'+port);
+app.listen(PORT , ()=>{
+    console.log('Server is running at http://localhost:'+PORT);
 }); 
