@@ -38,7 +38,7 @@ export class UserService {
   
   loginUser(verifyUser:loginUser)
   {
-   return this.http.post(environment.apiBaseUrl+'auth',verifyUser);
+   return this.http.post('/',verifyUser);
   }
 
   getselectedUser(id:string)
